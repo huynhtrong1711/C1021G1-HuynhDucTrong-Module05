@@ -2,7 +2,7 @@ let width: number;
 let height: number;
 
 width = 10.5;
-height = 20;
+height = 100;
 
 let area: number = width*height;
 console.log(`Diện tích hình chữ nhật: ${area}`);
