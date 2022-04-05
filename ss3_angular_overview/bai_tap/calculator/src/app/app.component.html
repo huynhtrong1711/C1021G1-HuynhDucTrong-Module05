@@ -1,0 +1,21 @@
+
+  <h1>Máy tính cơ bản</h1>
+
+
+     <input type="number" [(ngModel)]="number1">
+
+
+     <input type="number" [(ngModel)]="number2">
+
+
+      <button (click)="operatorSum()">+</button>
+      <button (click)="operatorSubtraction()">-</button>
+     <button (click)="operatorMultiplication()">*</button>
+      <button (click)="operatorDivision()">/</button>
+
+
+      <button (click)="calculator()">Tính</button><br>
+     Kết quả là : {{result}}
+
+
+

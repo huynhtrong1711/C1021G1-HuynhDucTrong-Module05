@@ -1,0 +1,29 @@
+<h1>Học sinh</h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Age</th>
+    <th>Mark</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{students.id}}</td>
+    <td><span [style.coler]="color">{{students.name}}</span></td>
+    <td>{{students.address}}</td>
+    <td >{{students.age}}</td>
+    <td>{{students.mark}}</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<span>Chỉnh sửa Mark: </span>
+<input #element type="number" [value]="students.mark" (click)="changMark(element.value)">
+<br>
+<br>
+
+<span [style.color]="color">Chỉnh sửa color: </span>
+<input #colors type="text" (change)="changColor(colors.value)">

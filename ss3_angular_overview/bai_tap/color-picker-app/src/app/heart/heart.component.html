@@ -1,0 +1,8 @@
+<div>
+  <span >Bạn muốn trái tim màu gì?</span>
+  <input #colors type="text" (change)="changedColor(colors.value)">
+  <div  class="heart" >
+    <div [style.background]="color" class="left"></div>
+    <div [style.background]="color" class="right"></div>
+  </div>
+</div>
