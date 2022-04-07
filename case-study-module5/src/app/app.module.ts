@@ -10,6 +10,7 @@ import { ListCustomerComponent } from './customer/list-customer/list-customer.co
 import { EditCustomerComponent } from './customer/edit-customer/edit-customer.component';
 import { ListEmployeeComponent } from './employee/list-employee/list-employee.component';
 import { AppRoutingModule } from "./app-routing.module";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -26,7 +27,9 @@ import { AppRoutingModule } from "./app-routing.module";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

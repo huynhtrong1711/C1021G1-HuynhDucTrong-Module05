@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CustomerServiceService} from "../dto/customer-service.service";
+
+
 
 @Component({
   selector: 'app-list-customer',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCustomerComponent implements OnInit {
 
-  constructor() { }
+  customerList: any[] = [];
+
+  constructor(private customla : CustomerServiceService) { }
 
   ngOnInit(): void {
+   this.customerList =  this.customla.customers;
   }
 
 }

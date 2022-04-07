@@ -5,3 +5,4 @@ interface Student {
   age: number;
   mark: number;
 }
+

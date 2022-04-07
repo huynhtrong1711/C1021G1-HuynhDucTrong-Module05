@@ -1,0 +1,12 @@
+import {ICustomer} from "../customer";
+
+export class CustomerDao {
+  ngOnInit(): void {
+  }
+  constructor() {
+  }
+
+
+
+
+}

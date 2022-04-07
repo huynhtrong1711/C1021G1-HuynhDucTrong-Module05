@@ -1,9 +1,14 @@
 <div class="container fluid">
-  <table id="employee">
+  <table class="table table-striped table-hover">
     <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone Number</th>
+    <tr style="text-align: center">
+      <th>Id</th>
+      <th>Tên</th>
+      <th>Mã Khách hàng</th>
+      <th>Ngày sinh</th>
+      <th>Giới tính</th>
+      <th>CMNH</th>
+      <th>Số điện thoại</th>
       <th>Email</th>
       <th>Address</th>
       <th>Edit</th>
@@ -11,11 +16,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Hoàng Đặng Quốc Phú</td>
-      <td>0949490493</td>
-      <td>hdqphu1301@gmail.com</td>
-      <td>Quảng Trị</td>
+    <tr *ngFor="let customer of customerList">
+      <td>{{customer.id}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td>
         <button type="button" class="btn btn-success" routerLink="/edit-customer">Edit</button>
       </td>
