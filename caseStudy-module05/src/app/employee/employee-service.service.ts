@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Customer} from './customer';
+import {Employee} from './employee';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
-  customers : Customer[] = [
+export class EmployeeServiceService {
+  employees : Employee[] = [
     {
       id:1,
       name:"Nguyễn Ngọc Long Tiên",
@@ -16,7 +16,9 @@ export class ServiceService {
       phone:"0398765412",
       email:"tien@gmail.com",
       address:"Đà Nẵng",
-      customerType:"Member"
+      position: "Quản lý",
+      education: "Đại học",
+      division: "Quản lý"
     },
     {
       id:2,
@@ -28,7 +30,9 @@ export class ServiceService {
       phone:"0954668451",
       email:"dat09@gmail.com",
       address:"Đà Nẵng",
-      customerType:"Member"
+      position: "Quản lý",
+      education: "Đại học",
+      division: "Quản lý"
     },
     {
       id:3,
@@ -40,20 +44,25 @@ export class ServiceService {
       phone:"0966874521",
       email:"hieu3tuoi@gmail.com",
       address:"Quảng Nam",
-      customerType:"Member"
+      position: "Quản lý",
+      education: "Đại học",
+      division: "Quản lý"
     },
     {
-      id:4,
-      name:"Trần Anh Trọng",
-      code:"KH-0004",
-      birthday:"02-11-2015",
-      gender:"Nam",
-      idCard:"239874562",
-      phone:"0976488123",
-      email:"trong7tuoi@gmail.com",
-      address:"Đà Nẵng",
-      customerType:"Member"
+      id: 4,
+      name: "Trần Anh Trọng",
+      code: "KH-0004",
+      birthday: "02-11-2015",
+      gender: "Nam",
+      idCard: "239874562",
+      phone: "0976488123",
+      email: "trong7tuoi@gmail.com",
+      address: "Đà Nẵng",
+      position: "Quản lý",
+      education: "Đại học",
+      division: "Quản lý"
     }
   ];
+
   constructor() { }
 }

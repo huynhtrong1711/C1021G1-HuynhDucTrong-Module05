@@ -8,6 +8,8 @@ import { BodyComponent } from './home-furama/body/body.component';
 import { HeaderComponent } from './home-furama/header/header.component';
 import { FooterComponent } from './home-furama/footer/footer.component';
 import { ListCustomerComponent } from './customer/list-customer/list-customer.component';
+import { ListEmployeeComponent } from './employee/list-employee/list-employee.component';
+import { ViewCustomerComponent } from './customer/view-customer/view-customer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ListCustomerComponent } from './customer/list-customer/list-customer.co
     BodyComponent,
     HeaderComponent,
     FooterComponent,
-    ListCustomerComponent
+    ListCustomerComponent,
+    ListEmployeeComponent,
+    ViewCustomerComponent
   ],
   imports: [
     BrowserModule,

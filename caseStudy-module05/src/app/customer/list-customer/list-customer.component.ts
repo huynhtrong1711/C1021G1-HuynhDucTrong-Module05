@@ -10,10 +10,18 @@ import {ServiceService} from '../service.service';
 export class ListCustomerComponent implements OnInit {
 
   customers : any [] = [];
+  customerDelete: Customer;
   constructor(private custom : ServiceService) { }
 
   ngOnInit(): void {
     this.customers = this.custom.customers;
   }
 
+  deleteCustomer(id: any) {
+    this.customers.splice(id-1, 1)
+  }
+
+  getValue(customer: Customer) {
+    this.customerDelete = customer;
+  }
 }

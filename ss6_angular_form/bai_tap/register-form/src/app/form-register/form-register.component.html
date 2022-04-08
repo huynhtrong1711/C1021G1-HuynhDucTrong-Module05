@@ -1,0 +1,146 @@
+<form [formGroup]="registerForm" (ngSubmit)="createForm()">
+<section class="h-100 bg-dark">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img
+                  src="https://cdn.tgdd.vn//GameApp/-1//dienthoai-1-675x1200-4.jpg"
+                alt="Sample photo"
+                class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+              />
+            </div>
+
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Đăng ký thành viên</h3>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example8"><h6>Email</h6></label>
+                  <input type="text" id="form3Example" class="form-control form-control-lg" name="email" formControlName="email"/>
+                </div>
+                <div class="alert alert-danger" role = "alert"
+                     *ngIf ="registerForm.get('email')?.errors.required &&
+                      registerForm.get('email')?.touched">
+                Không được để trống nha!
+                </div>
+                <div class="alert alert-danger" role = "alert"
+                     *ngIf ="registerForm.get('email')?.errors.email &&
+                      registerForm.get('email')?.touched">
+                  Phải đúng chuẩn email mới được nha!
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example8"><h6>Mật khẩu</h6></label>
+                  <input [ngModel]="password" type="password" id="form3Examples" class="form-control form-control-lg" name="password" formControlName="password"/>
+                </div>
+<!--                <div class="alert alert-danger" role = "alert"-->
+<!--                     *ngIf ="!registerForm.get('password')?.errors.required &&-->
+<!--                      !registerForm.get('password')?.touched">-->
+<!--                  Không được để trống nha!-->
+<!--                </div>-->
+<!--                <div class="alert alert-danger" role = "alert"-->
+<!--                     *ngIf ="!registerForm.get('password')?.errors.minlength &&-->
+<!--                      !registerForm.get('password')?.touched">-->
+<!--                  Phải nhiều hơn 6 ký tự nha!-->
+<!--                </div>-->
+
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example8"><h6>Nhập lại mật khẩu</h6></label>
+                  <input type="password" id="form3Example99" class="form-control form-control-lg" name="confirmPassword" formControlName="confirmPassword" />
+                </div>
+<!--                <div class="alert alert-danger" role = "alert"-->
+<!--                     *ngIf ="!registerForm.get('confirmPassword')?.errors.required &&-->
+<!--                      !registerForm.get('confirmPassword')?.touched">-->
+<!--                  Không được để trống nha!-->
+<!--                </div>-->
+<!--                <div class="alert alert-danger" role = "alert"-->
+<!--                     *ngIf ="!registerForm.get('confirmPassword')?.errors.pattern &&-->
+<!--                      !registerForm.get('confirmPassword')?.touched">-->
+<!--                  Phải giống với mật khẩu chứ!-->
+<!--                </div>-->
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example8"><h6>Tên</h6></label>
+                  <input type="text" id="form3Exampl" class="form-control form-control-lg" />
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example8"><h6>Quốc tịch</h6></label>
+                  <select class="form-select" id="form3Example8">
+                    <option value="">Chọn quốc tịch</option>
+                    <option value="vn">Việt Nam</option>
+                    <option value="usa">Mỹ</option>
+                    <option value="cam">Campuchia</option>
+                  </select>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example8"><h6>Tuổi</h6></label>
+                  <input type="text" id="form3age" class="form-control form-control-lg" />
+                </div>
+
+                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                  <h6 class="mb-0 me-4">Gender: </h6>
+
+                  <div class="form-check form-check-inline mb-0 me-4">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="femaleGender"
+                      value="female"
+                    />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline mb-0 me-4">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="maleGender"
+                      value="male"
+                    />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline mb-0">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="otherGender"
+                      value="ljpt"
+                    />
+                    <label class="form-check-label" for="otherGender">Other</label>
+                  </div>
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example97"><h6>Số điện thoại</h6></label>
+                  <input type="text" id="form3Example97" class="form-control form-control-lg" />
+                </div>
+
+                <div class="d-flex justify-content-end pt-3">
+                  <a type="button" class="btn btn-light btn-lg">Reset all</a>
+                  <a type="button" class="btn btn-warning btn-lg ms-2">Submit form</a>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</form>
