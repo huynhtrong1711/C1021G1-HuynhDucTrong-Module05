@@ -1,5 +1,5 @@
 <form [formGroup]="registerForm" (ngSubmit)="createForm()">
-<section class="h-100 bg-dark">
+<section class="h-100 bg-secondary">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
@@ -22,65 +22,77 @@
                   <input type="text" id="form3Example" class="form-control form-control-lg" name="email" formControlName="email"/>
                 </div>
                 <div class="alert alert-danger" role = "alert"
-                     *ngIf ="registerForm.get('email')?.errors.required &&
-                      registerForm.get('email')?.touched">
+                     *ngIf ="registerForm.get('email')?.errors?.required &&
+                      registerForm.get('email').touched">
                 Không được để trống nha!
                 </div>
                 <div class="alert alert-danger" role = "alert"
-                     *ngIf ="registerForm.get('email')?.errors.email &&
-                      registerForm.get('email')?.touched">
+                     *ngIf ="registerForm.get('email')?.errors?.email &&
+                      registerForm.get('email').touched">
                   Phải đúng chuẩn email mới được nha!
                 </div>
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example8"><h6>Mật khẩu</h6></label>
-                  <input [ngModel]="password" type="password" id="form3Examples" class="form-control form-control-lg" name="password" formControlName="password"/>
-                </div>
-<!--                <div class="alert alert-danger" role = "alert"-->
-<!--                     *ngIf ="!registerForm.get('password')?.errors.required &&-->
-<!--                      !registerForm.get('password')?.touched">-->
-<!--                  Không được để trống nha!-->
-<!--                </div>-->
-<!--                <div class="alert alert-danger" role = "alert"-->
-<!--                     *ngIf ="!registerForm.get('password')?.errors.minlength &&-->
-<!--                      !registerForm.get('password')?.touched">-->
-<!--                  Phải nhiều hơn 6 ký tự nha!-->
-<!--                </div>-->
+                <fieldset formGroupName="passWordGroup">
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example8"><h6>Mật khẩu</h6></label>
+                    <input  type="password" id="form3Examples" class="form-control form-control-lg" name="passwords"
+                            formControlName="passwords" />
+                  </div>
+                  <div class="alert alert-danger" role = "alert"
+                       *ngIf ="passwords?.errors?.required &&
+                      passwords.touched">
+                    Không được để trống nha!
+                  </div>
+                  <div class="alert alert-danger" role = "alert"
+                       *ngIf ="passwords?.errors?.minlength &&
+                      passwords.touched">
+                    Phải nhiều hơn 6 ký tự nha!
+                  </div>
 
-
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example8"><h6>Nhập lại mật khẩu</h6></label>
-                  <input type="password" id="form3Example99" class="form-control form-control-lg" name="confirmPassword" formControlName="confirmPassword" />
-                </div>
-<!--                <div class="alert alert-danger" role = "alert"-->
-<!--                     *ngIf ="!registerForm.get('confirmPassword')?.errors.required &&-->
-<!--                      !registerForm.get('confirmPassword')?.touched">-->
-<!--                  Không được để trống nha!-->
-<!--                </div>-->
-<!--                <div class="alert alert-danger" role = "alert"-->
-<!--                     *ngIf ="!registerForm.get('confirmPassword')?.errors.pattern &&-->
-<!--                      !registerForm.get('confirmPassword')?.touched">-->
-<!--                  Phải giống với mật khẩu chứ!-->
-<!--                </div>-->
-
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example8"><h6>Tên</h6></label>
-                  <input type="text" id="form3Exampl" class="form-control form-control-lg" />
-                </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example8"><h6>Nhập lại mật khẩu</h6></label>
+                    <input type="password" id="form3Example99" class="form-control form-control-lg"
+                           name="confirmPasswords" formControlName="confirmPasswords" />
+                  </div>
+                  <div class="alert alert-danger" role = "alert"
+                       *ngIf ="confirmPasswords?.errors?.required &&
+                      confirmPasswords.touched">
+                    Không được để trống nha!
+                  </div>
+                  <div class="alert alert-danger" role = "alert"
+                       *ngIf ="registerForm.hasError('passwordnotmatch', ['passWordGroup']) &&
+                      confirmPasswords.touched">
+                    Phải giống với mật khẩu chứ!
+                  </div>
+                </fieldset>
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example8"><h6>Quốc tịch</h6></label>
-                  <select class="form-select" id="form3Example8">
+                  <select class="form-select" id="form3Example8" name="country" formControlName="country">
                     <option value="">Chọn quốc tịch</option>
-                    <option value="vn">Việt Nam</option>
-                    <option value="usa">Mỹ</option>
-                    <option value="cam">Campuchia</option>
+                    <option [ngValue]="country" *ngFor="let country of country">{{country}}</option>
                   </select>
+                </div>
+                <div class="alert alert-danger" role = "alert"
+                     *ngIf ="registerForm.get('country')?.errors?.required &&
+                      registerForm.get('country').touched">
+                  Không được để trống nha!
                 </div>
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example8"><h6>Tuổi</h6></label>
-                  <input type="text" id="form3age" class="form-control form-control-lg" />
+                  <input type="date" id="form3age" class="form-control form-control-lg" name="age"
+                         formControlName="age" />
+                </div>
+                <div class="alert alert-danger" role = "alert"
+                     *ngIf ="registerForm.get('age')?.errors?.required &&
+                      registerForm.get('age').touched">
+                  Không được để trống nha!
+                </div>
+                <div class="alert alert-danger" role = "alert"
+                     *ngIf ="registerForm.get('age').hasError('ageUnder') &&
+                      registerForm.get('age').touched">
+                  Phải lớn hơn 18 tuổi mới là người trưởng thành!
                 </div>
 
                 <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
@@ -121,15 +133,29 @@
                   </div>
 
                 </div>
+                <div class="alert alert-danger" role = "alert"
+                     *ngIf ="registerForm.get('gender')?.errors?.required &&
+                      registerForm.get('gender').touched">
+                  Không được để trống nha!
+                </div>
 
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example97"><h6>Số điện thoại</h6></label>
-                  <input type="text" id="form3Example97" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example97"><h6>Số điện thoại(+84)</h6></label>
+                  <input type="text" id="form3Example97" class="form-control form-control-lg" name="phone" formControlName="phone"/>
+                </div>
+                <div class="alert alert-danger" role = "alert"
+                     *ngIf ="registerForm.get('phone')?.errors?.required &&
+                      registerForm.get('phone').touched">
+                  Không được để trống nha!
+                </div>
+                <div class="alert alert-danger" role = "alert"
+                     *ngIf ="registerForm.get('phone')?.errors?.pattern &&
+                      registerForm.get('phone').touched">
+                  Số điện thoại phải bắt đầu bằng +84!
                 </div>
 
                 <div class="d-flex justify-content-end pt-3">
-                  <a type="button" class="btn btn-light btn-lg">Reset all</a>
-                  <a type="button" class="btn btn-warning btn-lg ms-2">Submit form</a>
+                  <button type="submit" class="btn btn-warning">Đăng ký</button>
                 </div>
 
               </div>

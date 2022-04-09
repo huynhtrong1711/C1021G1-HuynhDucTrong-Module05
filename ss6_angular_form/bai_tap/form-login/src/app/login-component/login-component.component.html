@@ -19,16 +19,17 @@
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example17" class="form-control form-control-lg" name="email" formControlName="email"/>
+                      <input type="email" id="form2Example17" class="form-control form-control-lg"
+                             name="email" formControlName="email"/>
                       <label class="form-label" for="form2Example17" >Email address</label>
                     </div>
                   <div class="alert alert-danger" role = "alert"
-                       *ngIf ="loginForm.get('email').errors.required &&
+                       *ngIf ="loginForm.get('email')?.errors?.required &&
                       loginForm.get('email').touched">
                     Không được để trống nha!
                   </div>
                   <div class="alert alert-danger" role = "alert"
-                       *ngIf ="loginForm.get('email').errors.email &&
+                       *ngIf ="loginForm.get('email')?.errors?.email &&
                       loginForm.get('email').touched">
                     Phải đúng chuẩn email mới được nha!
                   </div>
@@ -38,12 +39,12 @@
                       <label class="form-label" for="form2Example27">Password</label>
                     </div>
                   <div class="alert alert-danger" role = "alert"
-                    *ngIf ="loginForm.get('password').errors.required &&
+                    *ngIf ="loginForm.get('password')?.errors?.required &&
                     loginForm.get('password').touched">
                     Không được để trống nha!
                   </div>
                   <div class="alert alert-danger" role = "alert"
-                       *ngIf ="loginForm.get('password').errors.minlength &&
+                       *ngIf ="loginForm.get('password')?.errors?.minlength &&
                          loginForm.get('password').touched">
                     Phải nhiều hơn 6 ký tự nha!
                   </div>
