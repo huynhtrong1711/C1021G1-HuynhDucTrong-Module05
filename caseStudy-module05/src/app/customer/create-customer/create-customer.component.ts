@@ -1,0 +1,75 @@
+import { Component, OnInit } from '@angular/core';
+import {CustomerType} from '../customerType';
+import {Router} from '@angular/router';
+import {ServiceService} from '../service.service';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+
+
+@Component({
+  selector: 'app-create-customer',
+  templateUrl: './create-customer.component.html',
+  styleUrls: ['./create-customer.component.css']
+})
+export class CreateCustomerComponent implements OnInit {
+
+  listType: CustomerType[];
+
+  constructor(private serviceCustomer: ServiceService, private router: Router) {
+  }
+
+
+  ngOnInit(): void {
+    this.getListType();
+  }
+
+  createCustomerForm = new FormGroup({
+    code: new FormControl('', [Validators.required, Validators.pattern(/^(KH)(-)[0-9]{4}$/)]),
+    name: new FormControl('', [Validators.required,]),
+    birthday: new FormControl('', [Validators.required, this.checkAge]),
+    gender: new FormControl('', [Validators.required]),
+    idCard: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{9}$/)]),
+    phone: new FormControl('', [Validators.required, Validators.pattern(/(84|0[3|7|8|5|9])+([0-9]{8,9})$/)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    address: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    customerType: new FormControl('', [Validators.required]),
+  });
+
+  // onSubmit(createCustomerForm: FormGroup) {
+  //   this.createCustomerForm = createCustomerForm.value;
+  // this.serviceCustomer.createCustomer(this.createCustomerForm.value).subscribe(() => {
+  //   console.log("đã lấy được data");
+  // })
+  //   console.log(createCustomerForm.value);
+  // }
+
+  checkAge(birthday: AbstractControl) {
+    console.log(birthday.value);
+    const birth = new Date(birthday.value);
+    const date = Date.now() - birth.getTime() - 86400000;
+    const time = new Date(date);
+    console.log(time.getUTCFullYear());
+    const age = time.getUTCFullYear() - 1970;
+    console.log(age);
+    if (age < 18) {
+      return {'ageUnder': true};
+    }
+    return null;
+  }
+
+  getListType() {
+    this.serviceCustomer.getCustomerTypeList().subscribe(data => {
+      this.listType = data;
+    });
+  }
+
+  saveCustomer() {
+    if (!this.createCustomerForm.invalid) {
+      this.serviceCustomer.createCustomer(this.createCustomerForm.value).subscribe(() => {
+        console.log('đã lấy được data');
+        this.router.navigateByUrl("customer");
+      });
+      console.log(this.createCustomerForm.value);
+    }
+  }
+
+}

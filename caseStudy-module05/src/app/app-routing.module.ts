@@ -4,6 +4,7 @@ import {HomeFuramaComponent} from './home-furama/home-furama.component';
 import {ListCustomerComponent} from './customer/list-customer/list-customer.component';
 import {ListEmployeeComponent} from './employee/list-employee/list-employee.component';
 import {ViewCustomerComponent} from './customer/view-customer/view-customer.component';
+import {CreateCustomerComponent} from './customer/create-customer/create-customer.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,10 @@ const routes: Routes = [
     path: "employee", component:ListEmployeeComponent
   },
   {
-    path: "viewCustomer", component:ViewCustomerComponent
+    path: "viewCustomer/:id", component:ViewCustomerComponent
+  },
+  {
+    path: "create-customer", component: CreateCustomerComponent
   }
 ];
 

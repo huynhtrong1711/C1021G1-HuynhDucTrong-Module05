@@ -10,6 +10,10 @@ import { FooterComponent } from './home-furama/footer/footer.component';
 import { ListCustomerComponent } from './customer/list-customer/list-customer.component';
 import { ListEmployeeComponent } from './employee/list-employee/list-employee.component';
 import { ViewCustomerComponent } from './customer/view-customer/view-customer.component';
+import {HttpClientModule} from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CreateCustomerComponent } from './customer/create-customer/create-customer.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,15 @@ import { ViewCustomerComponent } from './customer/view-customer/view-customer.co
     FooterComponent,
     ListCustomerComponent,
     ListEmployeeComponent,
-    ViewCustomerComponent
+    ViewCustomerComponent,
+    CreateCustomerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

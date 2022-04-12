@@ -1,0 +1,77 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Customer": [
+    {
+      "id": 1,
+      "name": "Nguyễn Ngọc Long Tiên",
+      "code": "KH-0001",
+      "birthday": "1962-03-01",
+      "gender": "Nam",
+      "idCard": "2039875640",
+      "phone": "0398765412",
+      "email": "tien@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "nameType": "Platinum"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Văn Ngọc Đạt",
+      "code": "KH-0003",
+      "birthday": "1997-03-02",
+      "gender": "Nam",
+      "idCard": "209885640",
+      "phone": "0954668451",
+      "email": "dat09@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "nameType": "Platinum"
+      }
+    },
+    {
+      "code": "KH-0006",
+      "name": "Huỳnh Trọng",
+      "birthday": "1992-11-12",
+      "gender": "nam",
+      "idCard": "203698745",
+      "phone": "03353787848",
+      "email": "admin@gmail.com",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id": 3,
+        "nameType": "Gold"
+      }
+    }
+  ],
+  "CustomerType": [
+    {
+      "id": 1,
+      "nameType": "Diamond"
+    },
+    {
+      "id": 2,
+      "nameType": "Platinum"
+    },
+    {
+      "id": 3,
+      "nameType": "Gold"
+    },
+    {
+      "id": 4,
+      "nameType": "Silver"
+    },
+    {
+      "id": 5,
+      "nameType": "Member"
+    }
+  ]
+}
