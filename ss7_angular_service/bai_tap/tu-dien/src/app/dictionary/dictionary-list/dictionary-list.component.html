@@ -1,0 +1,15 @@
+<form >
+  <div class="container-fluid">
+    <div>
+      <h1>List Dictionary</h1>
+    </div>
+    <div>
+      <ul>
+        <li *ngFor="let dictionaries of dictionary">
+          <a  [routerLink]="['information', dictionaries.id]" >{{dictionaries.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</form>
+
