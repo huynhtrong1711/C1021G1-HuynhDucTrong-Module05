@@ -44,16 +44,22 @@
           type="text" class="form-control" id="email" readonly>
       </div>
       <div class="form-group col">
-        <label for="address">Địa chỉ</label>
-        <input
-          formControlName="address"
-          type="text" class="form-control" id="address" readonly>
+        <label >Loại khách hàng</label>
+        <div formControlName="customerType"
+             class="form-control" id="customerType" readonly>{{customer.customerType.nameType}}</div>
       </div>
     </div>
     <div class="form-group">
-      <label >Loại khách hàng</label>
-      <div formControlName="customerType"
-           class="form-control"  readonly></div>
+
+    <label for="address">Địa chỉ</label>
+    <input
+      formControlName="address"
+      type="text" class="form-control" id="address" readonly>
+
+<!--      <div formControlName="customerType"-->
+<!--           class="form-control"  readonly>-->
+<!--            {{customer.customerType.name}}-->
+<!--      </div>-->
     </div>
   </form>
   <br>

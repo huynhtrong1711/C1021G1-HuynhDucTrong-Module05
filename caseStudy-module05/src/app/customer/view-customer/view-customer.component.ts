@@ -14,8 +14,7 @@ export class ViewCustomerComponent implements OnInit {
 
   public formGroup :FormGroup;
   id: number;
-  customer : Customer[];
-  customerTypes : CustomerType[];
+  customer : Customer;
 
   constructor(private customerService: ServiceService,
               private activatedRoute :ActivatedRoute) {
@@ -36,15 +35,12 @@ export class ViewCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params.id;
     this.customerService.getInfo(this.id).subscribe(value => {
+      console.log(value);
       this.customer = value;
-      this.formGroup.setValue(this.customer)
-    });
-    this.customerService.getListTypeCustomer().subscribe(value => {
-      this.customerTypes= value;
-      this.formGroup.setValue(this.customerTypes)
-      console.log(this.customerTypes);
+      this.formGroup.patchValue(this.customer)
     })
   }
+
 
 
 }

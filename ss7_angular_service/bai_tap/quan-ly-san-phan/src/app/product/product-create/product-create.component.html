@@ -18,6 +18,15 @@
       <td><input type="text" formControlName="description"></td>
     </tr>
     <tr>
+      <td>Danh mục</td>
+      <td>
+        <select formControlName="categoryList">
+          <optopn [ngValue]="categoryList" *ngFor= "let categoryList of listType">{{categoryList.nameCategory}}</optopn>
+        </select>
+
+      </td>
+    </tr>
+    <tr>
       <td></td>
       <td><button>Tạo mới</button></td>
     </tr>

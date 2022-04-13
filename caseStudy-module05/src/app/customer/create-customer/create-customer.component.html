@@ -1,132 +1,4 @@
-<!--<h2 style="text-align: center">Thêm Mới Khách Hàng</h2>-->
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col-3"></div>-->
-<!--    <div class="col-6">-->
-<!--      <form [formGroup]="createCustomerForm">-->
-<!--        <div class="form-outline mb-4">-->
-<!--          <label for="exampleCode" class="form-label">Mã Khách Hàng</label>-->
-<!--          <input type="text" class="form-control" id="exampleCode" name="code" formControlName="code">-->
-<!--        </div>-->
-<!--        <div *ngIf="createCustomerForm.get('code').errors?.required && createCustomerForm.get('code').touched" style="color: red">-->
-<!--          Vui lòng không để trống!-->
-<!--        </div>-->
-<!--        <div *ngIf="createCustomerForm.get('code').errors?.pattern && createCustomerForm.get('code').touched" style="color: red">-->
-<!--          Vui lòng nhập đúng định dạng. (KH-XXXX) trong đó X là số từ (0-9)!-->
-<!--        </div>-->
-
-<!--        <div class="form-outline mb-4">-->
-<!--          <label for="exampleName" class="form-label">Họ Tên</label>-->
-<!--          <input type="text" class="form-control" id="exampleName" name="name" formControlName="name">-->
-<!--          &lt;!&ndash;    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>&ndash;&gt;-->
-<!--        </div>-->
-<!--        <div *ngIf="createCustomerForm.get('name').errors?.required && createCustomerForm.get('name').touched" style="color: red">-->
-<!--          Vui lòng không để trống!-->
-<!--        </div>-->
-
-<!--        <div class="form-outline mb-4">-->
-<!--          <label for="exampleAge" class="form-label">Ngày Sinh</label>-->
-<!--          <input type="date" class="form-control" id="exampleAge" name="birthday" formControlName="birthday">-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('birthday').hasError('ageUnder') && createCustomerForm.get('birthday').touched" style="color: red">-->
-<!--          Rất tiếc bạn chưa đủ 18 tuổi!-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('birthday').errors?.required &&  createCustomerForm.get('birthday').touched" style="color: red">-->
-<!--          Vui lòng chọn ngày!-->
-<!--        </div>-->
-
-<!--        <div class="form-outline mb-4">-->
-<!--          <label class="form-label">Giới Tính</label>-->
-<!--          <input  type="radio"  name="gender" formControlName="gender" value="nam" style="margin-left: 10px"/>Nam-->
-<!--          <input  type="radio"  name="gender" formControlName="gender" value="nữ"/>Nữ-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('gender').errors?.required &&  createCustomerForm.get('gender').touched" style="color: red">-->
-<!--          Vui lòng Không được để trống!-->
-<!--        </div>-->
-
-<!--        <div class="form-outline mb-4">-->
-<!--          <label for="exampleIdCard" class="form-label">Số CMND/CCCD</label>-->
-<!--          <input type="text" class="form-control" id="exampleIdCard" name="idCard" formControlName="idCard">-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('idCard').errors?.required &&  createCustomerForm.get('idCard').touched" style="color: red">-->
-<!--          Vui lòng Không để trống!-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('idCard').errors?.pattern &&  createCustomerForm.get('idCard').touched" style="color: red">-->
-<!--          Vui lòng nhập đúng định dạng gồm 9 hoặc 10 chữ số!-->
-<!--        </div>-->
-
-<!--        <div class="form-outline mb-4">-->
-<!--          <label for="examplePhone" class="form-label">Số Điện Thoại</label>-->
-<!--          <input type="text" class="form-control" id="examplePhone" name="phone" formControlName="phone">-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('phone').errors?.required &&  createCustomerForm.get('phone').touched" style="color: red">-->
-<!--          Vui lòng không để trống!-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('phone').errors?.pattern &&  createCustomerForm.get('phone').touched" style="color: red">-->
-<!--          Vui lòng nhập đúng định dạng.-->
-<!--          Bắt đầu là 0 hoặc +84 và tiếp theo là đầu số |3|5|7|9. Ví dụ: 0905678123, 0352960280, +84912345678!-->
-<!--        </div>-->
-
-<!--        <div class="form-outline mb-4">-->
-<!--          <label for="exampleEmail" class="form-label">Email</label>-->
-<!--          <input type="email" class="form-control" id="exampleEmail" name="email" formControlName="email">-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('email').errors?.required &&  createCustomerForm.get('email').touched" style="color: red">-->
-<!--          Vui lòng không để trống!-->
-<!--        </div>-->
-<!--        <div *ngIf="createCustomerForm.get('email').errors?.email && createCustomerForm.get('email').touched" style="color: red">-->
-<!--          Vui lòng nhập đúng format! ví dụ: NguyenVanAn@gmail.com.-->
-<!--        </div>-->
-
-<!--        <div class="form-outline mb-4">-->
-<!--          <label for="exampleAddress" class="form-label">Địa Chỉ</label>-->
-<!--          <input type="text" class="form-control" id="exampleAddress" name="address" formControlName="address">-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('address').errors?.required &&  createCustomerForm.get('address').touched" style="color: red">-->
-<!--          Vui lòng không để trống!-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('address').errors?.minlength &&  createCustomerForm.get('address').touched" style="color: red">-->
-<!--          Vui lòng nhâp lớn hơn 6 ký tự!-->
-<!--        </div>-->
-
-<!--        <div class="form-outline mb-4">-->
-<!--          <label for="exampleTypeCustomer" class="form-label">Loại Khách Hàng</label>-->
-<!--          <select *ngIf="listType" class="form-select" aria-label="Default select example" name="customerType" formControlName="customerType" id="exampleTypeCustomer" style="margin-left: 10px">-->
-<!--            <option value="" selected>-&#45;&#45;Chọn-&#45;&#45;</option>-->
-<!--            <option [ngValue]="c" *ngFor="let c of listType">{{c.nameType}}</option>-->
-<!--          </select>-->
-<!--          &lt;!&ndash;  <input type="password" class="form-control" id="exampleInputPassword1" >&ndash;&gt;-->
-<!--        </div>-->
-<!--        <div-->
-<!--          *ngIf="createCustomerForm.get('customerType').errors?.required &&  createCustomerForm.get('customerType').touched" style="color: red">-->
-<!--          Vui lòng không để trống!-->
-<!--        </div>-->
-<!--        &lt;!&ndash;  <div class="mb-3 form-check">&ndash;&gt;-->
-<!--        &lt;!&ndash;    <input type="checkbox" class="form-check-input" id="exampleCheck1">&ndash;&gt;-->
-<!--        &lt;!&ndash;    <label class="form-check-label" for="exampleCheck1">Check me out</label>&ndash;&gt;-->
-<!--        &lt;!&ndash;  </div>&ndash;&gt;-->
-<!--        <button type="submit" class="btn btn-primary" (click)="saveCustomer()"  >Lưu</button>-->
-<!--        <button type="submit" class="btn btn-primary m-3" routerLink="/customer"  >Trở về</button>-->
-<!--        &lt;!&ndash;  routerLink="/customer"&ndash;&gt;-->
-<!--      </form>-->
-<!--    </div>-->
-<!--    <div class="col-3"></div>-->
-<!--  </div>-->
-<!--</div>-->
-
-
-
-
+<form [formGroup]="createCustomerForm" (ngSubmit)="saveCustomer()">
   <section >
     <div class="container-fluid">
       <div class="row justify-content-center align-items-center">
@@ -134,7 +6,7 @@
               <div class="col">
                 <div class="card-body p-md-5 text-black">
                   <h3 class="mb-5 text-uppercase" style="text-align: center">Thêm mới khách hàng</h3>
-                  <form [formGroup]="createCustomerForm">
+
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example"><h6>Mã khách hàng</h6></label>
                     <input type="text" id="form3Example" class="form-control form-control-lg" name="code" formControlName="code"/>
@@ -174,49 +46,23 @@
                     <div class="alert alert-danger" role = "alert"
                          *ngIf ="createCustomerForm.get('birthday').hasError('ageUnder') &&
                       createCustomerForm.get('birthday').touched">
-                      Phải giống với mật khẩu chứ!
+                      Phải lơn hơn 18 tuổi mới trưởng thành!
                     </div>
 
-                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-                    <h6 class="mb-0 me-4">Gender: </h6>
-
-                    <div class="form-check form-check-inline mb-0 me-4">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="femaleGender"
-                        value="female"
-                      />
-                      <label class="form-check-label" for="femaleGender">Female</label>
+                  <div class="form-outline mb-4">
+                    <div>
+                      <label class="form-label"><h6>Giới Tính</h6></label>
                     </div>
-
-                    <div class="form-check form-check-inline mb-0 me-4">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="maleGender"
-                        value="male"
-                      />
-                      <label class="form-check-label" for="maleGender">Male</label>
+                    <div>
+                      <input type="radio" class="mx-2" value="Khác" formControlName="gender">Khác
+                      <input type="radio" class="mx-2" value="Nam" formControlName="gender">Nam 🙎‍♂
+                      <input type="radio" class="mx-2" value="Nữ" formControlName="gender">Nữ 🙎🏻‍♀
                     </div>
-
-                    <div class="form-check form-check-inline mb-0">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="otherGender"
-                        value="ljpt"
-                      />
-                      <label class="form-check-label" for="otherGender">Other</label>
-                    </div>
-                    <div
-                      *ngIf="createCustomerForm.get('gender').errors?.required &&  createCustomerForm.get('gender').touched" style="color: red">
-                      Vui lòng Không được để trống!
-                    </div>
+                  </div>
+                  <div
+                    *ngIf="createCustomerForm.get('gender').errors?.required &&  createCustomerForm.get('gender').touched"
+                    style="color: red">
+                    Vui lòng Không được để trống!
                   </div>
 
                   <div class="form-outline mb-4">
@@ -297,11 +143,24 @@
                     Không được để trống nha!
                   </div>
 
-<!--                  <div class="d-flex justify-content-end">-->
-                    <button type="submit" class="btn btn-primary m-3" (click)="saveCustomer()">Lưu</button>
-                    <button type="submit" class="btn btn-primary m-3" routerLink="/customer" >Trở về</button>
-<!--                  </div>-->
-                  </form>
+
+                  <div class="d-flex justify-content-end">
+
+                    <mat-form-field appearance="fill" hidden>
+                      <mat-label>Message</mat-label>
+                      <input matInput value="Tạo mới khách hàng thành công!" #message>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" hidden>
+                      <mat-label>Action</mat-label>
+                      <input matInput value="OK!" #action>
+                    </mat-form-field>
+
+                    <button type="submit" class="btn btn-primary m-3" (click)="openSnackBar(message.value, action.value)" >Lưu</button>
+                    <a type="button" class="btn btn-primary m-3" routerLink="/customer" >Trở về</a>
+
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -309,5 +168,5 @@
           </div>
     </div>
   </section>
-
+</form>
 

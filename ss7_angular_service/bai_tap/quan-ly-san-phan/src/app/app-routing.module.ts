@@ -9,16 +9,20 @@ import {ProductDeleteComponent} from "./product/product-delete/product-delete.co
 const routes: Routes = [ {
   path: 'list',
   component: ProductListComponent
-}, {
+},
+  {
   path: 'create',
   component: ProductCreateComponent
-}, {
+},
+  {
   path: 'edit/:id',
   component: ProductEditComponent
-}, {
+},
+  {
   path: 'delete/:id',
   component: ProductDeleteComponent
-}];
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

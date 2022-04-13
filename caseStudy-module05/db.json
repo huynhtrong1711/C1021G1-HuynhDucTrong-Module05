@@ -38,18 +38,49 @@
       }
     },
     {
+      "code": "KH-0005",
+      "name": "Lê Quân",
+      "birthday": "1998-11-11",
+      "gender": "Nữ",
+      "idCard": "203659874",
+      "phone": "+84353787848",
+      "email": "trongoliver1998@gmail.com",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id": 1,
+        "nameType": "Diamond"
+      },
+      "id": 3
+    },
+    {
       "code": "KH-0006",
-      "name": "Huỳnh Trọng",
-      "birthday": "1992-11-12",
-      "gender": "nam",
-      "idCard": "203698745",
-      "phone": "03353787848",
+      "name": "Đăng Duy Linh",
+      "birthday": "2003-12-13",
+      "gender": "Nam",
+      "idCard": "203659833",
+      "phone": "+8435378722",
+      "email": "Linh@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "nameType": "Diamond"
+      },
+      "id": 4
+    },
+    {
+      "code": "KH-0007",
+      "name": "Tiên",
+      "birthday": "2002-01-13",
+      "gender": "Nam",
+      "idCard": "236841554",
+      "phone": "0353987953",
       "email": "admin@gmail.com",
       "address": "Quảng Nam",
       "customerType": {
         "id": 3,
         "nameType": "Gold"
-      }
+      },
+      "id": 5
     }
   ],
   "CustomerType": [

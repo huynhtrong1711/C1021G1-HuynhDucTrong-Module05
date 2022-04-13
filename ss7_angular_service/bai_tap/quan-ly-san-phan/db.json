@@ -1,0 +1,60 @@
+{
+  "Product": [
+    {
+      "id" : 1,
+      "name" : "Iphone 11 Pro Max",
+      "price" : 1200000,
+      "description" : "Xịn",
+      "category" : {
+        "idCategory" : 1,
+        "nameCategory": "Điện thoại"
+
+      }
+    },
+    {
+      "id" : 2,
+      "name" : "Mercedes AMG G63",
+      "price" : 14000000,
+      "description" : "Xe đi đánh Golf",
+      "category" : {
+        "idCategory" : 2,
+        "nameCategory": "Xe hơi"
+
+      }
+    },
+    {
+      "id" : 3,
+      "name" : "SH 2022",
+      "price" : 1000000,
+      "description" : "Xe hơi tốn xăng",
+      "category" : {
+        "idCategory" : 5,
+        "nameCategory": "Xe máy"
+
+      }
+    }
+  ],
+  "CategoryList": [
+  {
+    "idCategory": 1,
+    "nameCategory": "Điện thoại"
+  },
+  {
+    "idCategory": 2,
+    "nameCategory": "Xe hơi"
+  },
+  {
+    "idCategory": 3,
+    "nameCategory": "Ti vi"
+  },
+  {
+    "idCategory": 4,
+    "nameCategory": "Tủ lạnh"
+  },
+  {
+    "idCategory": 5,
+    "nameCategory": "Xe máy"
+  }
+]
+
+}

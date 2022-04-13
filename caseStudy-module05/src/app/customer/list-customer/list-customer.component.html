@@ -28,7 +28,7 @@
       <td>{{customer.address}}</td>
       <td style="text-align: center">{{customer.customerType.nameType}}</td>
       <td>
-        <button type="button" class="btn btn-success m-1" routerLink="/edit-customer">Sửa</button>
+        <button type="button" class="btn btn-success m-1" [routerLink]="['/edit-customer', customer.id]">Sửa</button>
         <!-- Button trigger modal -->
         <button class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getValue(customer)">Xóa</button>
         <button type="button" class="btn btn-warning m-1" [routerLink]="['/viewCustomer',customer.id]">

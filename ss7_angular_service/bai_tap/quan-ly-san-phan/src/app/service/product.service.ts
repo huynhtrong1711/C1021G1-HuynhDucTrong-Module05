@@ -1,62 +1,37 @@
 import { Injectable } from '@angular/core';
 import {Product} from "../model/product";
+import {HttpClient} from "@angular/common/http";
+import {CategoryList} from "../model/categoryList";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
-
-  products: Product[] = [{
-    id: 1,
-    name: 'IPhone 12',
-    price: 2400000,
-    description: 'New'
-  }, {
-    id: 2,
-    name: 'IPhone 11',
-    price: 1560000,
-    description: 'Like new'
-  }, {
-    id: 3,
-    name: 'IPhone X',
-    price: 968000,
-    description: '97%'
-  }, {
-    id: 4,
-    name: 'IPhone 8',
-    price: 7540000,
-    description: '98%'
-  }, {
-    id: 5,
-    name: 'IPhone 11 Pro',
-    price: 1895000,
-    description: 'Like new'
-  }];
+  private readonly PRODUCT_API='http://localhost:3000/Product';
+  private readonly CATEGORY_API='http://localhost:3000/CategoryList';
+  constructor(private http : HttpClient) { }
 
   getAll() {
-    return this.products;
+    return this.http.get<Product[]>(this.PRODUCT_API);
+  }
+
+  getCategory() {
+    return this.http.get<CategoryList[]>(this.CATEGORY_API);
   }
 
   saveProduct(product) {
-    this.products.push(product);
+    return this.http.post<Product>(this.PRODUCT_API, product);
   }
   findById(id: number) {
-    return this.products.find(product => product.id === id);
+    return this.http.get(this.PRODUCT_API + '/' + id);
   }
 
-  updateProduct(id: number, product: Product) {
-    for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i].id === id) {
-        this.products[i] = product;
-      }
-    }
+  updateProduct(id: number, product) {
+    return this.http.put<Product>( this.PRODUCT_API + '/' + id, product)
   }
 
   deleteProduct(id: number) {
-    this.products = this.products.filter(product => {
-      return product.id !== id;
-    });
+    return this.http.delete<Product>(this.PRODUCT_API + '/' + id)
   }
 }

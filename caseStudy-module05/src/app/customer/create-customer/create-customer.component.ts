@@ -3,6 +3,7 @@ import {CustomerType} from '../customerType';
 import {Router} from '@angular/router';
 import {ServiceService} from '../service.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class CreateCustomerComponent implements OnInit {
 
   listType: CustomerType[];
 
-  constructor(private serviceCustomer: ServiceService, private router: Router) {
+  constructor(private serviceCustomer: ServiceService, private router: Router,
+              private matSnackBar : MatSnackBar) {
   }
 
 
@@ -65,11 +67,14 @@ export class CreateCustomerComponent implements OnInit {
   saveCustomer() {
     if (!this.createCustomerForm.invalid) {
       this.serviceCustomer.createCustomer(this.createCustomerForm.value).subscribe(() => {
-        console.log('đã lấy được data');
-        this.router.navigateByUrl("customer");
+        this.router.navigateByUrl("/customer");
       });
       console.log(this.createCustomerForm.value);
     }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.matSnackBar.open(message, action);
   }
 
 }

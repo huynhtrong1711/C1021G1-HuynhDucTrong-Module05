@@ -5,6 +5,7 @@ import {ListCustomerComponent} from './customer/list-customer/list-customer.comp
 import {ListEmployeeComponent} from './employee/list-employee/list-employee.component';
 import {ViewCustomerComponent} from './customer/view-customer/view-customer.component';
 import {CreateCustomerComponent} from './customer/create-customer/create-customer.component';
+import {EditCustomerComponent} from './customer/edit-customer/edit-customer.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: "create-customer", component: CreateCustomerComponent
+  },
+  {
+    path: 'edit-customer/:id', component : EditCustomerComponent
   }
 ];
 

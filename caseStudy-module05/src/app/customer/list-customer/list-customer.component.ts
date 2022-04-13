@@ -11,7 +11,6 @@ import {CustomerType} from '../customerType';
 export class ListCustomerComponent implements OnInit {
 
   customers : Customer[];
-  customer: Customer;
   customerType : CustomerType[];
   customerDelete: Customer;
   p : number = 1;

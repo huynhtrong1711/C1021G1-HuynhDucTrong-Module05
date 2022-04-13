@@ -25,12 +25,16 @@ export class ServiceService {
     return this.http.delete(`${this.CUSTOMER_API}/` + id);
   }
   getInfo(id: number) {
-    return this.http.get<Customer[]>(`${this.CUSTOMER_API}/` + id);
+    return this.http.get<Customer>(this.CUSTOMER_API+ '/' + id);
   }
   getListTypeCustomer(){
     return this.http.get<CustomerType[]>(this.CUSTOMERTYPE_API);
   }
   createCustomer(data){
-    return this.http.post<Customer>(this.CUSTOMER_API, data);
+    return this.http.post<Customer>(this.CUSTOMER_API,data);
+  }
+
+  updateCustomer(id: number, data) {
+    return this.http.put<Customer>(this.CUSTOMER_API + '/' + id, data);
   }
 }

@@ -1,0 +1,147 @@
+<div class="container">
+  <h1 class="list-title" style="text-align: center">Chỉnh sửa thông tin khách hàng</h1>
+  <form [formGroup]="editFormCustomer" (ngSubmit)="updateCustomer()">
+    <div class="row">
+      <div class="form-group col  mb-3">
+        <label for="exampleInputEmail1"><h6>Mã khách hàng</h6></label>
+        <input formControlName="code" type="text" class="form-control" name="code">
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('code')?.errors?.required &&
+                      editFormCustomer.get('code').touched">
+        Không được để trống nha!
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('code')?.errors?.pattern &&
+                      editFormCustomer.get('code').touched">
+        Vui lòng nhập đúng định dạng. (KH-XXXX) trong đó X là số từ (0-9)!
+      </div>
+      <div class="form-group col ">
+        <label for="exampleInputEmail1"><h6>Tên khách hàng</h6></label>
+        <input formControlName="name" type="text" class="form-control" id="exampleInputEmail1" name="name">
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('name')?.errors?.required&&
+                      editFormCustomer.get('name').touched">
+        Không được để trống nha!
+      </div>
+
+      <div class="form-group col">
+        <label for="exampleInputPassword2"><h6>Ngày sinh</h6></label>
+        <input formControlName="birthday" type="date" class="form-control" id="exampleInputPassword2" name="birthday">
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('birthday')?.errors?.required &&
+                      editFormCustomer.get('birthday').touched">
+        Không được để trống nha!
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('birthday').hasError('ageUnder') &&
+                      editFormCustomer.get('birthday').touched">
+        Phải lơn hơn 18 tuổi mới trưởng thành!
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col  mb-3">
+        <label for="exampleInputPassword2"><h6>Số CMNH/CCCD</h6></label>
+        <input formControlName="idCard" type="text" class="form-control" id="exampleInputPassword3" name="idCard">
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('idCard')?.errors?.required&&
+                     editFormCustomer.get('idCard').touched">
+        Không được để trống nha!
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('idCard')?.errors?.pattern &&
+                      editFormCustomer.get('idCard').touched">
+        Vui lòng nhập đúng định dạng gồm 9 hoặc 10 chữ số!
+      </div>
+
+      <div class="form-group col">
+        <label for="phoneNumber"><h6>Số điện thoại</h6></label>
+        <input formControlName="phone" type="text" class="form-control" id="phoneNumber" name="phone" >
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('phone')?.errors?.required&&
+                      editFormCustomer.get('phone').touched">
+        Không được để trống nha!
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('phone')?.errors?.pattern &&
+                      editFormCustomer.get('phone').touched">
+        Vui lòng nhập đúng định dạng.
+        Bắt đầu là 0 hoặc +84 và tiếp theo là đầu số |3|5|7|9. Ví dụ: 0905678123, 0352960280, +84912345678!
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col mb-3">
+        <label for="email"><h6>Email</h6></label>
+        <input formControlName="email" type="text" class="form-control" id="email" name="email" >
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('email')?.errors?.required&&
+                      editFormCustomer.get('email').touched">
+        Không được để trống nha!
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('email')?.errors?.email &&
+                      editFormCustomer.get('email').touched">
+        Vui lòng nhập đúng định dạng của email!
+      </div>
+
+      <div class="form-group col">
+        <div class="mb-2">
+          <label><h6>Giới Tính</h6></label>
+        </div>
+        <div>
+          <input type="radio" class="mx-2" value="Khác" formControlName="gender">Khác
+          <input type="radio" class="mx-2" value="Nam"  formControlName="gender">Nam 🙎‍♂
+          <input type="radio"  class="mx-2" value="Nữ" formControlName="gender">Nữ 🙎🏻‍♀
+        </div>
+      </div>
+      <div
+        *ngIf="editFormCustomer.get('gender').errors?.required &&  editFormCustomer.get('gender').touched"
+        style="color: red">
+        Vui lòng Không được để trống!
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="form-group col mb-3 ">
+        <label for="address"><h6>Địa chỉ</h6></label>
+        <input formControlName="address" type="text" class="form-control" id="address" name="address">
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('address')?.errors?.required&&
+                      editFormCustomer.get('address').touched">
+        Không được để trống nha!
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('address')?.errors?.minlength &&
+                      editFormCustomer.get('address').touched">
+        Vui lòng nhâp lớn hơn 6 ký tự!!
+      </div>
+
+      <div class="form-group col">
+        <label ><h6>Loại khách hàng</h6></label>
+        <select class="form-select" id="form3Example8" name="customerType" formControlName="customerType" *ngIf="listType">
+          <option [ngValue]="customerType" *ngFor="let customerType of listType">{{customerType.nameType}}</option>
+        </select>
+      </div>
+      <div class="alert alert-danger" role = "alert"
+           *ngIf ="editFormCustomer.get('customerType')?.errors?.required&&
+                      editFormCustomer.get('customerType').touched">
+        Không được để trống nha!
+      </div>
+    </div>
+  </form>
+  <br>
+  <div class="text-center">
+    <button type="submit" class="btn btn-success m-3" >Lưu</button>
+    <a type="button" class="btn btn-success m-3" routerLink="/customer">Trở về</a>
+  </div>
+
+</div>
+<br>
+<br>
