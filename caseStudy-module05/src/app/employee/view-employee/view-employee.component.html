@@ -1,0 +1,68 @@
+<div class="container">
+  <h2 class="list-title" style="text-align: center">Thông tin nhân viên</h2>
+  <form [formGroup]="formGroup">
+  <div class="row">
+    <div class="form-group col">
+      <label>Tên nhân viên</label>
+      <input type="text" formControlName="name" class="form-control" readonly>
+    </div>
+    <div class="form-group col">
+      <label>Mã nhân viên</label>
+      <input type="text" formControlName="code" class="form-control" readonly>
+    </div>
+    <div class="form-group col">
+      <label>Ngày sinh</label>
+      <input type="date" formControlName="birthday" class="form-control" readonly>
+    </div>
+  </div>
+    <div class="row">
+      <div class="form-group col">
+        <label>Số điện thoại</label>
+        <input type="text" formControlName="phone" class="form-control" readonly>
+      </div>
+      <div class="form-group col">
+        <label>Giới tính</label>
+        <input type="text" formControlName="gender" class="form-control" readonly>
+      </div>
+      <div class="form-group col">
+        <label>Số CMND/CCCD</label>
+        <input type="text" formControlName="idCard" class="form-control" readonly>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col">
+        <label>Email</label>
+        <input type="text" formControlName="email" class="form-control" readonly>
+      </div>
+      <div class="form-group col">
+        <label>Lương (USD)</label>
+        <input type="text" formControlName="salary" class="form-control" readonly>
+      </div>
+      <div class="form-group col">
+        <label>Địa chỉ</label>
+        <input type="text" formControlName="address" class="form-control" readonly>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col">
+        <label>Chức vụ</label>
+        <input type="text" formControlName="positions" class="form-control" readonly>
+      </div>
+      <div class="form-group col">
+        <label>Trình độ</label>
+        <input type="text" formControlName="educations" class="form-control" readonly>
+      </div>
+      <div class="form-group col">
+        <label>Bộ phận</label>
+        <input type="text" formControlName="divisions" class="form-control" readonly>
+      </div>
+    </div>
+  </form>
+  <br>
+  <div class="text-center">
+    <button type="button" class="btn btn-secondary" routerLink="/employee">Trở về</button>
+  </div>
+</div>
+<br>
+<br>
+<br>

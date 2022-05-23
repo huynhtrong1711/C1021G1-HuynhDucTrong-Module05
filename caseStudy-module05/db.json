@@ -8,24 +8,8 @@
   ],
   "Customer": [
     {
-      "id": 1,
-      "name": "Nguyễn Ngọc Long Tiên",
-      "code": "KH-0001",
-      "birthday": "1962-03-01",
-      "gender": "Nam",
-      "idCard": "2039875640",
-      "phone": "0398765412",
-      "email": "tien@gmail.com",
-      "address": "Đà Nẵng",
-      "customerType": {
-        "id": 2,
-        "nameType": "Platinum"
-      }
-    },
-    {
-      "id": 2,
-      "name": "Nguyễn Văn Ngọc Đạt",
       "code": "KH-0003",
+      "name": "Nguyễn Văn Ngọc Đạt",
       "birthday": "1997-03-02",
       "gender": "Nam",
       "idCard": "209885640",
@@ -35,17 +19,18 @@
       "customerType": {
         "id": 2,
         "nameType": "Platinum"
-      }
+      },
+      "id": 2
     },
     {
-      "code": "KH-0005",
-      "name": "Lê Quân",
-      "birthday": "1998-11-11",
-      "gender": "Nữ",
-      "idCard": "203659874",
-      "phone": "+84353787848",
-      "email": "trongoliver1998@gmail.com",
-      "address": "Quảng Nam",
+      "code": "KH-0004",
+      "name": "Hùng Sơn",
+      "birthday": "2003-02-11",
+      "gender": "Nam",
+      "idCard": "203698158",
+      "phone": "+8435398754",
+      "email": "hson@gmail.com",
+      "address": "Đà Nẵng",
       "customerType": {
         "id": 1,
         "nameType": "Diamond"
@@ -53,34 +38,19 @@
       "id": 3
     },
     {
-      "code": "KH-0006",
-      "name": "Đăng Duy Linh",
-      "birthday": "2003-12-13",
+      "code": "KH-0099",
+      "name": "Tiên",
+      "birthday": "1999-04-18",
       "gender": "Nam",
-      "idCard": "203659833",
-      "phone": "+8435378722",
-      "email": "Linh@gmail.com",
+      "idCard": "203987564",
+      "phone": "0398765412",
+      "email": "trongoliver1998@gmail.com",
       "address": "Đà Nẵng",
       "customerType": {
         "id": 1,
         "nameType": "Diamond"
       },
       "id": 4
-    },
-    {
-      "code": "KH-0007",
-      "name": "Tiên",
-      "birthday": "2002-01-13",
-      "gender": "Nam",
-      "idCard": "236841554",
-      "phone": "0353987953",
-      "email": "admin@gmail.com",
-      "address": "Quảng Nam",
-      "customerType": {
-        "id": 3,
-        "nameType": "Gold"
-      },
-      "id": 5
     }
   ],
   "CustomerType": [
@@ -103,6 +73,166 @@
     {
       "id": 5,
       "nameType": "Member"
+    }
+  ],
+  "Employee": [
+    {
+      "id": 1,
+      "name": "Nguyễn Ngọc Long Tiên",
+      "code": "KH-0001",
+      "birthday": "1997-03-02",
+      "gender": "Nam",
+      "idCard": "2039875640",
+      "phone": "0398765412",
+      "salary": 4000,
+      "email": "tien@gmail.com",
+      "address": "Đà Nẵng",
+      "positions": {
+        "id": 2,
+        "namePosition": "Phục vụ"
+      },
+      "educations": {
+        "id": 1,
+        "nameEducation": "Trung cấp"
+      },
+      "divisions": {
+        "id": 1,
+        "nameDivision": "Sale-Marketing"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Văn Ngọc Đạt",
+      "code": "KH-0003",
+      "birthday": "1997-03-02",
+      "gender": "Nam",
+      "idCard": "209885640",
+      "phone": "0954668451",
+      "salary": 4000,
+      "email": "dat09@gmail.com",
+      "address": "Đà Nẵng",
+      "positions": {
+        "id": 2,
+        "namePosition": "Phục vụ"
+      },
+      "educations": {
+        "id": 1,
+        "nameEducation": "Trung cấp"
+      },
+      "divisions": {
+        "id": 1,
+        "nameDivision": "Sale-Marketing"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Hồ Nhật Hiếu",
+      "code": "KH-0003",
+      "birthday": "1997-03-02",
+      "gender": "Nam",
+      "idCard": "298365478",
+      "phone": "0966874521",
+      "salary": 4000,
+      "email": "hieu3tuoi@gmail.com",
+      "address": "Quảng Nam",
+      "positions": {
+        "id": 2,
+        "namePosition": "Phục vụ"
+      },
+      "educations": {
+        "id": 1,
+        "nameEducation": "Trung cấp"
+      },
+      "divisions": {
+        "id": 1,
+        "nameDivision": "Sale-Marketing"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Trần Anh Trọng",
+      "code": "KH-0004",
+      "birthday": "1997-03-02",
+      "gender": "Nam",
+      "idCard": "239874562",
+      "phone": "0976488123",
+      "salary": 4000,
+      "email": "trong7tuoi@gmail.com",
+      "address": "Đà Nẵng",
+      "positions": {
+        "id": 2,
+        "namePosition": "Phục vụ"
+      },
+      "educations": {
+        "id": 1,
+        "nameEducation": "Trung cấp"
+      },
+      "divisions": {
+        "id": 1,
+        "nameDivision": "Sale-Marketing"
+      }
+    }
+  ],
+  "Position": [
+    {
+      "id": 1,
+      "namePosition": "Lễ tân"
+    },
+    {
+      "id": 2,
+      "namePosition": "Phục vụ"
+    },
+    {
+      "id": 3,
+      "namePosition": "Chuyên viên"
+    },
+    {
+      "id": 4,
+      "namePosition": "Giám sát"
+    },
+    {
+      "id": 5,
+      "namePosition": "Quản lý"
+    },
+    {
+      "id": 6,
+      "namePosition": "Giám đốc"
+    }
+  ],
+  "Education": [
+    {
+      "id": 1,
+      "nameEducation": "Trung cấp"
+    },
+    {
+      "id": 2,
+      "nameEducation": "Cao đẳng"
+    },
+    {
+      "id": 3,
+      "nameEducation": "Đại học"
+    },
+    {
+      "id": 4,
+      "nameEducation": "Sau đại học"
+    }
+  ],
+  "Division": [
+    {
+      "id": 1,
+      "nameDivision": "Sale-Marketing"
+    },
+    {
+      "id": 2,
+      "nameDivision": "Hành chính"
+    },
+    {
+      "id": 3,
+      "nameDivision": "Phục vụ"
+    },
+    {
+      "id": 4,
+      "nameDivision": "Quản lý"
     }
   ]
 }

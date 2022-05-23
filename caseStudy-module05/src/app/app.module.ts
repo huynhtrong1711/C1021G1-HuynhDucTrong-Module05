@@ -20,6 +20,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { EditCustomerComponent } from './customer/edit-customer/edit-customer.component';
+import { ViewEmployeeComponent } from './employee/view-employee/view-employee.component';
+import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
+import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { EditCustomerComponent } from './customer/edit-customer/edit-customer.co
     ListEmployeeComponent,
     ViewCustomerComponent,
     CreateCustomerComponent,
-    EditCustomerComponent
+    EditCustomerComponent,
+    ViewEmployeeComponent,
+    EditEmployeeComponent,
+    CreateEmployeeComponent
   ],
   imports: [
     BrowserModule,

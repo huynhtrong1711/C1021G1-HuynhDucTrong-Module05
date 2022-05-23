@@ -5,8 +5,8 @@ export class Customer {
   private _id: number;
   private _name: string;
   private _code: string;
-  private _birthday: string;
-  private _gender: string;
+  private _birthday: Date;
+  private _gender: boolean;
   private _email: string;
   private _idCard: string;
   private _phone: string;
@@ -14,7 +14,7 @@ export class Customer {
   private _customerType : CustomerType;
 
 
-  constructor(id: number, name: string, code: string, birthday: string, gender: string, email: string, idCard: string,
+  constructor(id: number, name: string, code: string, birthday: Date, gender: boolean, email: string, idCard: string,
               phone: string, address: string, customerType: CustomerType) {
     this._id = id;
     this._name = name;
@@ -53,19 +53,19 @@ export class Customer {
     this._code = value;
   }
 
-  get birthday(): string {
+  get birthday(): Date {
     return this._birthday;
   }
 
-  set birthday(value: string) {
+  set birthday(value: Date) {
     this._birthday = value;
   }
 
-  get gender(): string {
+  get gender(): boolean {
     return this._gender;
   }
 
-  set gender(value: string) {
+  set gender(value: boolean) {
     this._gender = value;
   }
 

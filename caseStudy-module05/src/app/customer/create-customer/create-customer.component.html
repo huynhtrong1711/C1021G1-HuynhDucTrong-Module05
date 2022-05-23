@@ -54,9 +54,9 @@
                       <label class="form-label"><h6>Giới Tính</h6></label>
                     </div>
                     <div>
-                      <input type="radio" class="mx-2" value="Khác" formControlName="gender">Khác
-                      <input type="radio" class="mx-2" value="Nam" formControlName="gender">Nam 🙎‍♂
-                      <input type="radio" class="mx-2" value="Nữ" formControlName="gender">Nữ 🙎🏻‍♀
+                      <input type="radio" class="mx-2" value="null" formControlName="gender">LGBT
+                      <input type="radio" class="mx-2" value="true" formControlName="gender">Nam 🙎‍♂
+                      <input type="radio" class="mx-2" value="false" formControlName="gender">Nữ 🙎🏻‍♀
                     </div>
                   </div>
                   <div
@@ -156,7 +156,7 @@
                       <input matInput value="OK!" #action>
                     </mat-form-field>
 
-                    <button type="submit" class="btn btn-primary m-3" (click)="openSnackBar(message.value, action.value)" >Lưu</button>
+                      <button type="submit" class="btn btn-primary m-3" (click)="openSnackBar(message.value, action.value)" >Lưu</button>
                     <a type="button" class="btn btn-primary m-3" routerLink="/customer" >Trở về</a>
 
                   </div>

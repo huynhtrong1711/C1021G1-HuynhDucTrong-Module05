@@ -6,6 +6,7 @@ import {ListEmployeeComponent} from './employee/list-employee/list-employee.comp
 import {ViewCustomerComponent} from './customer/view-customer/view-customer.component';
 import {CreateCustomerComponent} from './customer/create-customer/create-customer.component';
 import {EditCustomerComponent} from './customer/edit-customer/edit-customer.component';
+import {ViewEmployeeComponent} from './employee/view-employee/view-employee.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   {
     path: 'edit-customer/:id', component : EditCustomerComponent
+  },
+  {
+    path: "viewEmployee/:id", component: ViewEmployeeComponent
   }
 ];
 

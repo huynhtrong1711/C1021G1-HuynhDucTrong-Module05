@@ -1,0 +1,101 @@
+<form [formGroup]="editForm" (ngSubmit)="updateBenhAn()">
+  <section>
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-6">
+          <div class="col">
+            <div class="card-body p-md-5 text-black">
+              <h3 class="mb-5 text-uppercase" style="text-align: center">Chỉnh sửa bệnh án</h3>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Mã bênh án</h6></label>
+                <input type="text" class="form-control form-control-lg" formControlName="maBenhAn" readonly/>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Mã bệnh nhân</h6></label>
+                <input type="text" class="form-control form-control-lg" formControlName="maBenhNhan" readonly/>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Tên bệnh nhân</h6></label>
+                <input type="text" class="form-control form-control-lg" formControlName="tenBenhNhan"/>
+              </div>
+              <div class="alert alert-danger" role="alert"
+                   *ngIf="editForm.get('tenBenhNhan')?.errors?.required &&
+                     editForm.get('tenBenhNhan')?.touched">
+                Không được để trống nha!
+              </div>
+              <div class="alert alert-danger" role="alert"
+                   *ngIf="editForm.get('tenBenhNhan')?.errors?.pattern &&
+                      editForm.get('pattern')?.touched">
+                Tên thì không chứa số!
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Ngày nhập viện</h6></label>
+                <input type="date" class="form-control form-control-lg" formControlName="ngayNhapVien"/>
+              </div>
+              <div class="alert alert-danger" role="alert"
+                   *ngIf="editForm.get('ngayNhapVien')?.errors?.required &&
+                     editForm.get('ngayNhapVien')?.touched">
+                Không được để trống nha!
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Ngày ra viện</h6></label>
+                <input type="date" class="form-control form-control-lg" formControlName="ngayRaVien"/>
+              </div>
+              <div class="alert alert-danger" role="alert"
+                   *ngIf="editForm.get('ngayRaVien')?.errors?.required &&
+                     editForm.get('ngayRaVien')?.touched">
+                Không được để trống nha!
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Lý do nhập viện</h6></label>
+                <input type="text" class="form-control form-control-lg" formControlName="lyDoNhapVien"/>
+              </div>
+              <div class="alert alert-danger" role="alert"
+                   *ngIf="editForm.get('lyDoNhapVien')?.errors?.required &&
+                     editForm.get('lyDoNhapVien')?.touched">
+                Không được để trống nha!
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Phương pháp điều trị</h6></label>
+                <input type="text" class="form-control form-control-lg" formControlName="phuongPhapDieuTri"/>
+              </div>
+              <div class="alert alert-danger" role="alert"
+                   *ngIf="editForm.get('phuongPhapDieuTri')?.errors?.required &&
+                     editForm.get('phuongPhapDieuTri')?.touched">
+                Không được để trống nha!
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Bác sĩ điều trị</h6></label>
+                <input type="text" class="form-control form-control-lg" formControlName="bacSi"/>
+              </div>
+              <div class="alert alert-danger" role="alert"
+                   *ngIf="editForm.get('bacSi')?.errors?.required&&
+                     editForm.get('bacSi')?.touched">
+                Không được để trống nha!
+              </div>
+
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary m-3">Lưu</button>
+                <a type="button" class="btn btn-primary m-3" routerLink="">Trở về</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</form>
+

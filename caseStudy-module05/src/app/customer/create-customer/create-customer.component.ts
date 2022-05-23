@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomerType} from '../customerType';
+import {CustomerType} from '../../model/customer/customerType';
 import {Router} from '@angular/router';
-import {ServiceService} from '../service.service';
+import {ServiceService} from '../../service/service.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
@@ -45,13 +45,10 @@ export class CreateCustomerComponent implements OnInit {
   // }
 
   checkAge(birthday: AbstractControl) {
-    console.log(birthday.value);
     const birth = new Date(birthday.value);
     const date = Date.now() - birth.getTime() - 86400000;
     const time = new Date(date);
-    console.log(time.getUTCFullYear());
     const age = time.getUTCFullYear() - 1970;
-    console.log(age);
     if (age < 18) {
       return {'ageUnder': true};
     }
@@ -69,7 +66,6 @@ export class CreateCustomerComponent implements OnInit {
       this.serviceCustomer.createCustomer(this.createCustomerForm.value).subscribe(() => {
         this.router.navigateByUrl("/customer");
       });
-      console.log(this.createCustomerForm.value);
     }
   }
 

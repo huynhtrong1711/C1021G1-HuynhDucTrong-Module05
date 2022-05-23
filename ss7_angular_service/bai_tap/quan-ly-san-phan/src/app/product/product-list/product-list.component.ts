@@ -28,6 +28,12 @@ export class ProductListComponent implements OnInit {
     }, error => {
       console.log("có lỗi khi lấy data");
     });
+    this.productService.getCategory().subscribe( data => {
+      this.categoryList= data
+      console.log("đã lấy được data");
+    }, error => {
+      console.log("có lỗi khi lấy data");
+    });
   }
 
 }

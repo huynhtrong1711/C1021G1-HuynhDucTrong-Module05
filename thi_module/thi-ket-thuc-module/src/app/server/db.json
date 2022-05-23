@@ -1,0 +1,64 @@
+{
+  "benhNhan": [
+    {
+      "id": 1,
+      "maBenhNhan": "BN-001",
+      "name": "Lê Minh A"
+    },
+    {
+      "id": 2,
+      "maBenhNhan": "BN-002",
+      "name": "Lê B"
+    },
+    {
+      "id": 3,
+      "maBenhNhan": "BN-003",
+      "name": "Hoàng M"
+    },
+    {
+      "id": 4,
+      "maBenhNhan": "BN-004",
+      "name": "Nguyễn Anh T"
+    }
+  ],
+  "benhAn": [
+    {
+      "id": 1,
+      "maBenhAn": "BA-001",
+      "maBenhNhan": {
+        "id": 3,
+        "maBenhNhan": "BN-003",
+        "name": "Hoàng M"
+      },
+      "tenBenhNhan": {
+        "id": 3,
+        "maBenhNhan": "BN-003",
+        "name": "Hoàng M"
+      },
+      "ngayNhapVien": "2022-01-04",
+      "ngayRaVien": "2022-04-04",
+      "lyDoNhapVien": "Tai nạn",
+      "phuongPhapDieuTri": "Mổ",
+      "bacSi": "Nguyễn Văn A"
+    },
+    {
+      "id": 4,
+      "maBenhAn": "BA-004",
+      "maBenhNhan": {
+        "id": 4,
+        "maBenhNhan": "BN-004",
+        "name": "Nguyễn Anh T"
+      },
+      "tenBenhNhan": {
+        "id": 4,
+        "maBenhNhan": "BN-004",
+        "name": "Nguyễn Anh T"
+      },
+      "ngayNhapVien": "2022-01-04",
+      "ngayRaVien": "2022-04-20",
+      "lyDoNhapVien": "Covid 19",
+      "phuongPhapDieuTri": "Cách ly theo dõi",
+      "bacSi": "Lê Văn A"
+    }
+  ]
+}

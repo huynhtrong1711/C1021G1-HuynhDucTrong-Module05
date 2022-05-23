@@ -18,7 +18,7 @@ export class ProductCreateComponent implements OnInit {
     name: new FormControl(),
     price: new FormControl(),
     description: new FormControl(),
-    categoryList : new FormControl()
+    category : new FormControl()
   });
   constructor(private productService: ProductService, private router : Router) { }
 

@@ -1,0 +1,59 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "Iphone 13 pro max",
+      "price": "26000000",
+      "quantity": "20",
+      "color": "Xanh, trắng, vàng gold",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "name": "Macbook",
+      "price": "30000000",
+      "quantity": "20",
+      "color": "đen, trắng",
+      "category": {
+        "id": 2,
+        "name": "Máy tính"
+      },
+      "id": 2
+    },
+    {
+      "name": "Xiaomi Not 12 ",
+      "price": "11000000",
+      "quantity": "20",
+      "color": "Xanh, vàng gold",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      },
+      "id": 3
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 2,
+      "name": "Máy tính"
+    },
+    {
+      "id": 3,
+      "name": "Ti vi"
+    },
+    {
+      "id": 4,
+      "name": "Tủ lạnh"
+    },
+    {
+      "id": 5,
+      "name": "Máy giặc"
+    }
+  ]
+}

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Customer} from '../customer';
-import {ServiceService} from '../service.service';
+import {Customer} from '../../model/customer/customer';
+import {ServiceService} from '../../service/service.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {CustomerType} from '../customerType';
+import {CustomerType} from '../../model/customer/customerType';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-customer',
@@ -12,15 +13,17 @@ import {CustomerType} from '../customerType';
 })
 export class EditCustomerComponent implements OnInit {
 
-  public editFormCustomer :FormGroup;
+  public editFormCustomer: FormGroup;
   id: number;
-  customer : Customer;
+  customer: Customer;
   listType: CustomerType[];
 
-  constructor(private customerService : ServiceService,
-              private activatedRoute : ActivatedRoute,
-              private router : Router) {
+  constructor(private customerService: ServiceService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private matSnackBar: MatSnackBar) {
     this.editFormCustomer = new FormGroup({
+      id: new FormControl(''),
       code: new FormControl('', [Validators.required, Validators.pattern(/^(KH)(-)[0-9]{4}$/)]),
       name: new FormControl('', Validators.required),
       birthday: new FormControl('', [Validators.required, this.checkAge]),
@@ -29,29 +32,27 @@ export class EditCustomerComponent implements OnInit {
       phone: new FormControl('', [Validators.required, Validators.pattern(/(84|0[3|7|8|5|9])+([0-9]{8,9})$/)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       address: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      customerType: new FormControl('', [Validators.required]),
+      customerType: new FormControl('', Validators.required)
     });
   }
 
   ngOnInit(): void {
+    this.getListType();
     this.id = this.activatedRoute.snapshot.params.id;
     this.customerService.getInfo(this.id).subscribe(value => {
-      console.log(value);
       this.customer = value;
-      this.editFormCustomer.patchValue(this.customer)
-    })
-    this.getListType();
+      this.editFormCustomer.setValue(this.customer);
+      this.editFormCustomer.get('gender').setValue(this.customer.gender?'Nam' : (this.customer.gender==null?'LGBT' : 'Nữ'));
+    });
+
   }
 
 
   checkAge(birthday: AbstractControl) {
-    console.log(birthday.value);
     const birth = new Date(birthday.value);
     const date = Date.now() - birth.getTime() - 86400000;
     const time = new Date(date);
-    console.log(time.getUTCFullYear());
     const age = time.getUTCFullYear() - 1970;
-    console.log(age);
     if (age < 18) {
       return {'ageUnder': true};
     }
@@ -65,10 +66,15 @@ export class EditCustomerComponent implements OnInit {
   }
 
   updateCustomer() {
-    console.log('aaaaaaaaaaa');
-    this.customerService.updateCustomer(this.activatedRoute.snapshot.params.id, this.editFormCustomer.value).subscribe(data =>{
-      console.log("đã cập nhập dữ liệu");
-      this.router.navigateByUrl("customer");
-    })
+    if (!this.editFormCustomer.invalid) {
+      this.customerService.updateCustomer(this.activatedRoute.snapshot.params.id, this.editFormCustomer.value).subscribe(data => {
+        this.router.navigateByUrl('/customer');
+      });
+    }
   }
+
+  openSnackBar(message: string, action: string) {
+    this.matSnackBar.open(message, action);
+  }
+
 }

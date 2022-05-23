@@ -1,0 +1,102 @@
+<form [formGroup]="formGroup" (ngSubmit)="save()">
+  <section >
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-6">
+          <div class="col">
+            <div class="card-body p-md-5 text-black">
+              <h3 class="mb-5 text-uppercase" style="text-align: center">Thêm mới sản phẩm</h3>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Tên sản phẩm</h6></label>
+                <input type="text" class="form-control form-control-lg" name="nane" formControlName="name" />
+              </div>
+              <div class="alert alert-danger" role = "alert"
+                   *ngIf ="formGroup.get('name')?.errors?.required&&
+                      formGroup.get('name').touched">
+                Không được để trống nha!
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Giá</h6></label>
+                <input type="text" class="form-control form-control-lg"
+                       name="price" formControlName="price" />
+              </div>
+              <div class="alert alert-danger" role = "alert"
+                   *ngIf ="formGroup.get('price')?.errors?.required &&
+                      formGroup.get('price').touched">
+                Không được để trống nha!
+              </div>
+              <div class="alert alert-danger" role = "alert"
+                          *ngIf ="formGroup.get('price')?.errors?.min &&
+                      formGroup.get('price').touched">
+              Giá phải lớn hơn 10.000.000 nha!
+            </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Số lượng</h6></label>
+                <input  type="text" class="form-control form-control-lg" name="quantity"
+                        formControlName="quantity" />
+              </div>
+              <div class="alert alert-danger" role = "alert"
+                   *ngIf ="formGroup.get('quantity')?.errors?.required&&
+                     formGroup.get('quantity').touched">
+                Không được để trống nha!
+              </div>
+              <div class="alert alert-danger" role = "alert"
+                   *ngIf ="formGroup.get('quantity')?.errors?.min &&
+                      formGroup.get('quantity').touched">
+                Số lượn không được là số âm!
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Màu sắc</h6></label>
+                <input  type="text" class="form-control form-control-lg" name="color"
+                        formControlName="color" />
+              </div>
+              <div class="alert alert-danger" role = "alert"
+                   *ngIf ="formGroup.get('color')?.errors?.required&&
+                     formGroup.get('color').touched">
+                Không được để trống nha!
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label"><h6>Loại sản phẩm</h6></label>
+                <select class="form-select"name="category" formControlName="category">
+                  <option value="" selected>--Chọn--</option>
+                  <option [ngValue]="category" *ngFor="let category of categoryList">{{category.name}}</option>
+                </select>
+              </div>
+              <div class="alert alert-danger" role = "alert"
+                   *ngIf ="formGroup.get('category')?.errors?.required&&
+                      formGroup.get('category').touched">
+                Không được để trống nha!
+              </div>
+
+
+              <div class="d-flex justify-content-end">
+
+                <mat-form-field appearance="fill" hidden>
+                  <mat-label>Message</mat-label>
+                  <input matInput value="Tạo mới sản phẩm {{formGroup.get('name').value}} thành công!" #message>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" hidden>
+                  <mat-label>Action</mat-label>
+                  <input matInput value="OK!" #action>
+                </mat-form-field>
+
+                <button type="submit" class="btn btn-primary m-3" (click)="openSnackBar(message.value, action.value)">Lưu</button>
+                <a type="button" class="btn btn-primary m-3" routerLink="" >Trở về</a>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</form>
+

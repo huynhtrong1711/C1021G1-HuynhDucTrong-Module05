@@ -74,6 +74,7 @@
         Bắt đầu là 0 hoặc +84 và tiếp theo là đầu số |3|5|7|9. Ví dụ: 0905678123, 0352960280, +84912345678!
       </div>
     </div>
+
     <div class="row">
       <div class="form-group col mb-3">
         <label for="email"><h6>Email</h6></label>
@@ -95,9 +96,9 @@
           <label><h6>Giới Tính</h6></label>
         </div>
         <div>
-          <input type="radio" class="mx-2" value="Khác" formControlName="gender">Khác
-          <input type="radio" class="mx-2" value="Nam"  formControlName="gender">Nam 🙎‍♂
-          <input type="radio"  class="mx-2" value="Nữ" formControlName="gender">Nữ 🙎🏻‍♀
+          <input type="radio" class="mx-2" value="null" formControlName="gender">LGBT
+          <input type="radio" class="mx-2" value="true"  formControlName="gender">Nam 🙎‍♂
+          <input type="radio"  class="mx-2" value="false" formControlName="gender">Nữ 🙎🏻‍♀
         </div>
       </div>
       <div
@@ -125,8 +126,9 @@
 
       <div class="form-group col">
         <label ><h6>Loại khách hàng</h6></label>
-        <select class="form-select" id="form3Example8" name="customerType" formControlName="customerType" *ngIf="listType">
-          <option [ngValue]="customerType" *ngFor="let customerType of listType">{{customerType.nameType}}</option>
+        <select class="form-select" id="form3Example8" name="customerType" formControlName="customerType">
+          <option [ngValue]="customerType" *ngFor="let customerType of listType"
+           [selected]="editFormCustomer.get('customerType').value.nameType === customerType.nameType" >{{customerType.nameType}}</option>
         </select>
       </div>
       <div class="alert alert-danger" role = "alert"
@@ -135,13 +137,24 @@
         Không được để trống nha!
       </div>
     </div>
-  </form>
+
   <br>
   <div class="text-center">
-    <button type="submit" class="btn btn-success m-3" >Lưu</button>
+
+    <mat-form-field appearance="fill" hidden>
+      <mat-label>Message</mat-label>
+      <input matInput value="Chỉnh sửa khách hàng thành công!" #message>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" hidden>
+      <mat-label>Action</mat-label>
+      <input matInput value="OK!" #action>
+    </mat-form-field>
+
+    <button type="submit" class="btn btn-success m-3" (click)="openSnackBar(message.value, action.value)"  >Lưu</button>
     <a type="button" class="btn btn-success m-3" routerLink="/customer">Trở về</a>
   </div>
-
+  </form>
 </div>
 <br>
 <br>
